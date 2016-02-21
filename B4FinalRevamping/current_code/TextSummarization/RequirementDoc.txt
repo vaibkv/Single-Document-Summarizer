@@ -1,0 +1,33 @@
+
+Requirement document for text summarization:
+
+1. Preprocessing
+
+1.1 tokenization into sentance (line breaking) and tokenization into word seperately stored. we have to use it later with sentance sequuence number.
+1.2 stop word removal
+1.3 stemming
+1.4 weight calculation for individuals tokens (word)
+
+2. Sentance extraction
+2.1 sentance weight calculation in following way
+a) sum of individuals word's weights 
+b) sum of word's weight which present in title
+c) sum of word's weight which present in theam of the document (theam is the3-4 word which is heigher weight across all document excluding titale word)
+d)if sentance begines with (he, she, they, it) previous sentance having little extra weight. it would be constant..will define it lator.
+e) if sentance begines with cue phrase (because of, in summary, finally, end with), need to assign more weight. cue phrase are predefined like finnalyy,ultimatelu..
+f) if sentance present two or more than two proper nouns or any date, year, times than we need to assign more weight
+g) it should be plugable so that in laterwords we can add some more features in it.
+h) weight should also be assign according to location of sentance, more weight if sentance is present in begning or end as compared with middle of the document.
+
+2.2 sentance ranking according to weight of individuals sentance
+2.3 extraction of top ranked sentance..how many sentance to extract should be configurable.
+
+3. Post procession
+3.1 re-arranment of sentance in original order.......................yaha tak finish karnaa...will see GAP latter on...
+3.2 if any GAP than add or delete the sentance
+
+GUI requirement:
+1. There would be one form which cantains following componets.
+a) file chooser
+b) file display
+c) there would two column one is showing for original text and second one is used for summary of first one
